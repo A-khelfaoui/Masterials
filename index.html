@@ -1,12 +1,569 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>MASTERIALS 2023</title>
-    <script type="text/javascript">
-    window.location.replace("https://ikims.blogspot.com/2023/04/MASTERIALS2023.html");
-    </script>
-  </head>
-  <body>
-  </body>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+		<title>Study Of a Metal Shed For Parking"</title>
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="masterials.css">
+		<style>
+			.container {
+				height: 100%;width: 100%;display: grid;justify-content: space-around;place-items: center;
+				margin: 0;padding: 5%;
+			}
+			.row {
+				align-items: center;
+				text-align: center;
+				height: 100%;
+			}
+			.s-one {
+				color:#000;
+				background-color: rgba(121, 49, 49, 0.2);
+			}
+			.s-two {
+				color:#000;
+				background-color: rgba(52, 116, 84, 0.2);
+			}
+			.s-three {
+				color:#000;
+				background-color: rgba(79, 64, 116, 0.2);
+			}
+			.s-foor {
+				color:#000;
+				background-color: rgba(121, 49, 49, 0.2);
+			}
+			.s-five {
+				color:#000;
+				background-color: rgba(52, 116, 84, 0.2);
+			}
+			.s-six {
+				color:#000;
+				background-color: rgba(79, 64, 116, 0.2);
+			}
+			.s-seven {
+				color:#000;
+				background-color: rgba(121, 49, 49, 0.2);
+			}
+			.s-eght {
+				color:#000;
+				background-color: rgba(52, 116, 84, 0.2);
+			}
+			.s-nine {
+				color:#000;
+				background-color: rgba(79, 64, 116, 0.2);
+			}
+			.s-ten {
+				color:#000;
+				background-color: rgba(121, 49, 49, 0.2);
+			}
+			.scroll-control {
+				position: fixed;
+				right: 20px;
+				top: 50%;
+				transform: translateX(-50%);
+				z-index: 999;
+			}
+			.scroll-control span {
+				cursor: pointer;
+				display: block;
+				width: 14px;
+				height: 14px;
+				border-radius: 50%;
+				margin: 10px 0;
+				background-color: #000;
+				opacity: 0.5;
+			}
+			.scroll-control span:hover {
+				opacity: 1;
+			}
+			@media all and (max-width: 1023px) {
+				.scroll-control span {
+					display: none;
+				}
+			}
+			.header {
+				display: flex;justify-content: space-around;
+				padding: 2%;position: fixed;background-color: #333;
+			  top: 0;z-index: 999;
+			  width: 100%;
+			  transition: top 0.3s;
+			}
+			.footer {
+				display: flex;justify-content: space-around;
+			}
+			.navbtns {
+				background: rgba(0, 0, 0, 0);color: #C55A11;border: none;
+			}
+			.navbtns:hover {
+				font-weight: bold;
+			}
+			.content-a {
+				text-align: center;
+			}
+			.parafooter{
+				color: #C55A11; font-size: 29px;
+			}
+			.imgholder {
+				height: 9rem;overflow: hidden;width: 100%;
+				background-position: center;background-repeat: no-repeat;background-size: contain;
+			}
+			a {
+				color: #C55A11;
+			}
+			a:hover {
+				text-decoration: underline;color: #C55A11;
+			}
+			#email {
+				color: #C55A11;
+			}
+			#email:hover {
+				font-style: italic;text-decoration: underline;
+			}
+			.emailbyd {
+				background: rgba(57, 59, 71, 0.6); border-radius: 30px;
+				position: fixed;top: 50%;left: 50%; transform: translate(-50%,-50%);
+				display: none;z-index: 998;
+			}
+			.emailbyd p {
+				color: white; font-size: 30px;padding: 0;margin: 3rem;
+			}
+			.img-zoom-container, .img-zoom-lens, .img-zoom-result {box-sizing: border-box;}
+			.img-zoom-container {
+			  position: relative;display:flex;align-items: center;justify-content: center;
+				width: 75%;height: 75%;
+			}
+			.img-zoom-container img {
+			  max-width: 100%;max-height: 100%;width: auto;height: auto;
+			}
+			.img-zoom-lens {
+			  position: absolute;
+			  border: none;
+			  /*set the size of the lens:*/
+			  width: 40px;
+			  height: 40px;
+			}
+			.img-zoom-result {
+			  border: 1px solid #d4d4d4;
+			  /*set the size of the result div:*/
+			  width: 50%;display: none;
+			  height: 100%;
+			}
+			.img-viewer {
+				position: fixed;top: 0;left: 0;
+				background: rgba(55, 55, 55, 0.09);backdrop-filter:blur(10px);
+				width: 100%;height: 100%;z-index: 995;
+				display: none;align-items:center;justify-content: center;
+			}
+			#closbttn {
+				position: fixed;top: 100px;left: 70px;background: rgb(222, 0, 0);
+				border: 1px solid #ddd;width:40px;height: 40px; border-radius: 8px
+			}
+			.body {
+				background-image: url('2.png');background-position: center;background-repeat: no-repeat;
+				background-attachment: fixed;z-index: -3;background-size: cover;
+				position: fixed;top: 0;left: 0;width: 100%;height: 100%;
+			}
+			.bodx {
+				z-index: -2;background-size: cover;background: rgba(255, 255, 255, 0.85);
+				position: fixed;top: 0;left: 0;width: 100%;height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="body"></div>
+		<div class="bodx"></div>
+		<div class="header" id="navbar">
+			<div><input type="button" class="navbtns" onclick="scrooll(2)" value="Abstract"></div>
+			<div><input type="button" class="navbtns" onclick="scrooll(3)" value="Introduction"></div>
+			<div><input type="button" class="navbtns" onclick="scrooll(4)" value="Materials And Methods"></div>
+			<div><input type="button" class="navbtns" onclick="scrooll(5)" value="Loads"></div>
+			<div><input type="button" class="navbtns" onclick="scrooll(6)" value="Loads Effect"></div>
+			<div><input type="button" class="navbtns" onclick="scrooll(7)" value="Technical Description"></div>
+			<div><input type="button" class="navbtns" onclick="scrooll(8)" value="Conclusion"></div>
+			<div><input type="button" class="navbtns" onclick="scrooll(9)" value="References"></div>
+			<div><input type="button" class="navbtns" onclick="scrooll(10)" value="Contact"></div>
+		</div>
+		<div class="scroll-control">
+			<span onclick="scrooll(1)"></span>
+			<span onclick="scrooll(2)"></span>
+			<span onclick="scrooll(3)"></span>
+			<span onclick="scrooll(4)"></span>
+			<span onclick="scrooll(5)"></span>
+			<span onclick="scrooll(6)"></span>
+			<span onclick="scrooll(7)"></span>
+			<span onclick="scrooll(8)"></span>
+			<span onclick="scrooll(9)"></span>
+			<span onclick="scrooll(10)"></span>
+		</div>
+		<div class="emailbyd" id="emailbyd">
+			<p>E-mail Coped</p>
+		</div>
+		<div class="img-viewer" id="img-viewer">
+			<input type="button" onclick="openviwer(0)" id="closbttn" value="X">
+			<div style="display: grid;place-items:center;width:100%;height:90%;padding:0;padding-top:0px;">
+				<div class="img-zoom-container">
+					<img id="myimage" src="Picture2png.png"></img>
+				  <div id="myresult" class="img-zoom-result"></div>
+				</div>
+			</div>
+		</div>
+
+		<section class="scroll s-one" data-section-name="s-one">
+			<div class="container">
+				<div class="content-a">
+					</br></br></br></br>
+					<p style="font-size:22px">University of Kasdi-Merbah Ouargla </br>
+					Faulty of applied sciences</br>
+					Department of Civil Engineering and Hydraulics</br>
+					Sector: Civil Engineering - Specialty: ECBR</br>
+					</p>
+					<p style="font-size:45px;font-weight: bold;">Study Of a Metal Shed For Parking</p>
+					<p style="color:#393B47;font-weight: bold;font-size:22px">Supervisor: Lokmane Abdeldjouad</br>
+					Presented by: Abdelkarim Khelfaoui</p>
+					<p class="parafooter">Masterials 2022/2023</p>
+				</div>
+				<div class="footert"></div>
+			</div>
+		</section>
+
+		<section class="scroll s-two" data-section-name="s-two">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p style="font-size:25px;font-weight:bold;">Abstract</p>
+						<p>The end of studies project represents the last phase of my training, it allowed me on the one hand to put into practice the knowledge acquired during my course and to deepen it.
+						In addition, this study allowed us to reach certain conclusions:.
+						The modeling must be as close as possible to reality, in order to approach the real behavior of the structure and obtain better results. In metallic structures the wind's effects are frequently the worst, although seismic research is important. A critical stage for proper scaling is the examination of the steel frame for instabilities. The stability of metal structures depends on effective assembly design.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="scroll s-three" data-section-name="s-three">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p style="font-size:25px;font-weight:bold;">Introduction</p>
+						<p>Metal sheds are a perfect solution for a quick, affordable, and easily build
+							The project, the subject of this study, consists of "a metal frame shed consisting of a large space for parking".
+							There are two entrances through gates on the main facade’s.
+							</p>
+						<p>The structure is located in the commune of In Amenas, daïra of In Amenas, wilaya of “Illizi”.
+							The structure has a surface area of 192.00 m2, and is 12.00 m wide, i.e. a bay 16.00 m long with a spacing between gantries of 4.00 m, which makes a total of five (05) gantries.
+							</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="scroll s-foor" data-section-name="s-foor">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p style="font-size:25px;font-weight:bold;">Materials And Methods</p>
+						<p>The regulations used for the realization of this study are:</p>
+						<ul>
+							<li>Design and calculation rules for steel structures (CCM97), regulatory technical document D.T.R-B.C-2.44.</li>
+							<li>Algerian paraseismic rules (RPA99 version 2003) D.T.R-B.C-2.48.</li>
+							<li>Permanent loads and operating overloads D.T.R-B.C-22.</li>
+							<li>Snow and wind rules (RNVA2013) D.T.R-C2.47.</li>
+							<li>Eurocode 1, Eurocode 2 and Eurocode 3.</li>
+							<li>Shallow foundation calculation rules D.T.R-B.C-2.33.</li>
+							<li>Rule of the study of the infrastructure according to the "BAEL91".</li>
+							<li>The software used  is autodesk robot structural analysis</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="scroll s-five" data-section-name="s-five">
+			<div class="container" style="padding:0;">
+				<div class="row">
+					<div class="col-lg-12">
+						<p style="font-size:25px;font-weight:bold;">Loads</p>
+						<p>The deferent type of loads applied structure are:</p>
+						<div style="display: flex;justify-content: space-around;">
+							<ul>
+								<li>Wind loads</li>
+								<li>Dead weight</li>
+								<li>Maintenance workers</li>
+							</ul>
+							<ul>
+								<li>Cladding</li>
+								<li>Dropped ceiling</li>
+								<li>Doors and windows</li>
+							</ul>
+						</div>
+						<div style="display: grid;justify-content: space-around;">
+							<div class="imgholder" onclick="openviwer(1)" style="background-image: url('Picture3.png');"></div>
+							<pstyle="padding:0;">Figure 1 : The wind effect</p>
+						</div>
+						<p style="padding:0;">The element of the structure :</p>
+						<div style="display: grid;justify-content: space-around;">
+							<div class="imgholder" onclick="openviwer(2)" style="background-image: url('Picture2png.png');"></div>
+							<pstyle="padding:0;">Figure 2 : Steel Structure</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="scroll s-six" data-section-name="s-six">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p style="font-size:25px;font-weight:bold;">Loads Effect </p>
+						<p>The wind effect on the building is high and we calculate it with Cpi & Cpe which are pressure coefficient, and the are related to the wind direction and dimensions of the building </p>
+						<p>The secondary element of the building are exposed to distortion due to dead loads and live loads, like buckling, banding, and <b style="color:#C55A11">Lateral-Torsional buckling</b> which called spillage </p>
+						<div style="display: grid;justify-content: space-around;">
+							<div class="imgholder" onclick="openviwer(3)" style="background-image: url('Picture4.png');"></div>
+							<p>Figure 3: loads effect on structure</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="scroll s-seven" data-section-name="s-seven">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p style="font-size:25px;font-weight:bold;">Technical Description</p>
+						<p>In this study, I calculated the various loads and determined the dimensions of the secondary elements manually, and then determined the structural elements of the building and verified their resistance to the various deformations mentioned earlier.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="scroll s-eght" data-section-name="s-eght">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p style="font-size:25px;font-weight:bold;">Conclusion</p>
+						<p>In the end, the effect of the wind on the buildings may be catastrophic and may collapse under its influence, but in our case the effect of the wind on the building is weak and the building can bear it. The loads that had a significant impact on the building are live loads, and after calculations and verifications, we conclude that the building is able to withstand All different campaigns that can be exposed to.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="scroll s-nine" data-section-name="s-nine">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p style="font-size:25px;font-weight:bold;">References</p>
+						<p>EuroCode3: <a href="https://www.phd.eng.br/wp-content/uploads/2015/12/en.1993.1.1.2005.pdf">ClickHere</a></p>
+						<p>DTR: <a href="https://a-khelfaoui.github.io/Masterials/DTR.pdf">ClickHere</a></p>
+						<p>CCM97: <a href="https://a-khelfaoui.github.io/Masterials/CMM.pdf">ClickHere</a></p>
+						<p>RNVA2013: <a href="https://a-khelfaoui.github.io/Masterials/RNV.pdf">ClickHere</a></p>
+						<p>MEMOIRE: "ETUDE D’UN HANGAR EN CHARPENTE METALLIQUE A USAGE DE STOCKAGE" de Tayebi Antar et Sehila Abdelhak</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="scroll s-ten" data-section-name="s-ten">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p style="font-size:25px;font-weight:bold;">Contact</p>
+						<p>E-mail: <a title="Click To Copy" onclick="clemail()" id="email">khelfaoui.abdelkarim@univ-ouargla.dz</a></p>
+						<p>LinkedIn: <a href="#" target="_blank" title="Click To Follow">ClickHere</a></p>
+						<p>Facebook: <a href="#" target="_blank" title="Click To Follow">ClickHere</a></p>
+						<p>Instagram: <a href="#" target="_blank" title="Click To Follow">ClickHere</a></p>
+						<p>Twitter: <a href="#" target="_blank" title="Click To Follow">ClickHere</a></p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div style="display:none;" id="divmil">
+			<input type="text" id="emails" value="khelfaoui.abdelkarim@univ-ouargla.dz">
+		</div>
+		<script src="3.3.1.jquery.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js"
+			integrity="sha512-UyX8JsMsNRW1cYl8BoxpcamonpwU2y7mSTsN0Z52plp7oKo1u92Xqfpv6lOlTyH3yiMXK+gU1jw0DVCsPTfKew=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script>
+			$(document).ready(function () {
+				screenCheck();
+			});
+			function scrooll(sec) {
+				if (sec==1) {
+					$.scrollify.move('#s-one');
+				}
+				else if (sec==2) {
+					$.scrollify.move('#s-two');
+				}
+				else if (sec==3) {
+					$.scrollify.move('#s-three');
+				}
+				else if (sec==4) {
+					$.scrollify.move('#s-foor');
+				}
+				else if (sec==5) {
+					$.scrollify.move('#s-five');
+				}
+				else if (sec==6) {
+					$.scrollify.move('#s-six');
+				}
+				else if (sec==7) {
+					$.scrollify.move('#s-seven');
+				}
+				else if (sec==8) {
+					$.scrollify.move('#s-eght');
+				}
+				else if (sec==9) {
+					$.scrollify.move('#s-nine');
+				}
+				else if (sec==10) {
+					$.scrollify.move('#s-ten');
+				}
+			}
+			var prevScrollpos = window.pageYOffset;
+					window.onscroll = function() {
+						var currentScrollPos = window.pageYOffset;
+  				if (prevScrollpos > currentScrollPos) {
+    			document.getElementById("navbar").style.top = "0";
+  			} else {
+    			document.getElementById("navbar").style.top = "-10%";
+  			}
+  			prevScrollpos = currentScrollPos;
+			}
+
+			$(window).on('resize', function () {
+				screenCheck();
+			});
+
+			function applyScroll() {
+				$.scrollify({
+					section: '.scroll',
+					sectionName: 'section-name',
+					//standardScrollElements: 'section',
+					easing: 'easeOutExpo',
+					scrollSpeed: 1100,
+					offset: 0,
+					scrollbars: true,
+					setHeights: true,
+					overflowScroll: true,
+					updateHash: false,
+					touchScroll: true,
+				});
+			}
+
+			function screenCheck() {
+				var deviceAgent = navigator.userAgent.toLowerCase();
+				var agentID = deviceAgent.match(/(iphone|ipod|ipad)/);
+				if (agentID || $(window).width() <= 1024) {
+					// its mobile screen
+					$.scrollify.destroy();
+					$('section').removeClass('scroll').removeAttr('style');
+					$.scrollify.disable();
+				} else {
+					// its desktop
+					$('section').addClass('scroll');
+					applyScroll();
+					$.scrollify.enable();
+				}
+			}
+			function clemail() {
+				document.getElementById("divmil").style.display ="block";
+				document.getElementById('emailbyd').style.display ="block";
+				document.getElementById('emails').select();
+	      document.execCommand("copy");
+				document.getElementById("divmil").style.display ="none";
+				hidebyd()
+			}
+			function hidebyd() {
+				setTimeout(function(){
+					document.getElementById('emailbyd').style.display ="none";
+				}, 2000)
+			}
+			function imageZoom(imgID, resultID) {
+			  var img, lens, result, cx, cy;
+			  img = document.getElementById(imgID);
+			  result = document.getElementById(resultID);
+			  /*create lens:*/
+			  lens = document.createElement("DIV");
+			  lens.setAttribute("class", "img-zoom-lens");
+			  /*insert lens:*/
+			  img.parentElement.insertBefore(lens, img);
+			  /*calculate the ratio between result DIV and lens:*/
+			  cx = result.offsetWidth / lens.offsetWidth;
+			  cy = result.offsetHeight / lens.offsetHeight;
+			  /*set background properties for the result DIV:*/
+			  result.style.backgroundImage = "url('" + img.src + "')";
+			  result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
+			  /*execute a function when someone moves the cursor over the image, or the lens:*/
+			  lens.addEventListener("mousemove", moveLens);
+			  img.addEventListener("mousemove", moveLens);
+			  /*and also for touch screens:*/
+			  lens.addEventListener("touchmove", moveLens);
+			  img.addEventListener("touchmove", moveLens);
+			  function moveLens(e) {
+			    var pos, x, y;
+			    /*prevent any other actions that may occur when moving over the image:*/
+			    e.preventDefault();
+			    /*get the cursor's x and y positions:*/
+			    pos = getCursorPos(e);
+			    /*calculate the position of the lens:*/
+			    x = pos.x - (lens.offsetWidth / 2);
+			    y = pos.y - (lens.offsetHeight / 2);
+			    /*prevent the lens from being positioned outside the image:*/
+			    if (x > img.width - lens.offsetWidth) {x = img.width - lens.offsetWidth;}
+			    if (x < 0) {x = 0;}
+			    if (y > img.height - lens.offsetHeight) {y = img.height - lens.offsetHeight;}
+			    if (y < 0) {y = 0;}
+			    /*set the position of the lens:*/
+			    lens.style.left = x + "px";
+			    lens.style.top = y + "px";
+			    /*display what the lens "sees":*/
+			    result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
+			  }
+			  function getCursorPos(e) {
+			    var a, x = 0, y = 0;
+			    e = e || window.event;
+			    /*get the x and y positions of the image:*/
+			    a = img.getBoundingClientRect();
+			    /*calculate the cursor's x and y coordinates, relative to the image:*/
+			    x = e.pageX - a.left;
+			    y = e.pageY - a.top;
+			    /*consider any page scrolling:*/
+			    x = x - window.pageXOffset;
+			    y = y - window.pageYOffset;
+			    return {x : x, y : y};
+			  }
+			}
+			imageZoom("myimage", "myresult");
+			function openviwer(ing) {
+				if (ing==0) {
+					document.getElementById('img-viewer').style.display ="none";
+				}
+				else if (ing==1) {
+					document.getElementById('img-viewer').style.display ="flex";
+					document.getElementById('myimage').removeAttribute("src");
+					document.getElementById('myimage').setAttribute("src", "Picture3.png");
+				}
+				else if (ing==2) {
+					document.getElementById('img-viewer').style.display ="flex";
+					document.getElementById('myimage').removeAttribute("src");
+					document.getElementById('myimage').setAttribute("src", "Picture2png.png");
+				}
+				else if (ing==3) {
+					document.getElementById('img-viewer').style.display ="flex";
+					document.getElementById('myimage').removeAttribute("src");
+					document.getElementById('myimage').setAttribute("src", "Picture4.png");
+				}
+			}
+		</script>
+	</body>
 </html>
