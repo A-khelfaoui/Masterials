@@ -64,26 +64,46 @@
 			}
 			.scroll-control {
 				position: fixed;
-				right: 20px;
-				top: 50%;
+				right: 20px;height: auto;
+				top: 40%;
 				transform: translateX(-50%);
 				z-index: 999;
 			}
-			.scroll-control span {
+			.dotholder {
+				width: 20px;height: 20px;display: flex;align-items: center;justify-content: center;
+			}
+			.dot {
 				cursor: pointer;
 				display: block;
-				width: 14px;
-				height: 14px;
+				width: 7px;
+				height: 7px;
 				border-radius: 50%;
-				margin: 10px 0;
+				margin: 0 0;
 				background-color: #000;
-				opacity: 0.5;
+				opacity: 0.5;transition: all 0.5s;
 			}
-			.scroll-control span:hover {
+			.dot:hover {
 				opacity: 1;
 			}
+			.active {
+				cursor: pointer;
+				display: block;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				margin: 0 0;
+				background-color: #000;
+				opacity: 0.9;
+			}
+			.active:before {
+				content: "";display: block;transform: translate(-5px,-5px);
+				width: 20px;height: 20px;border-radius: 50%;
+				background-color: rgba(0,0,0,0);
+				border: 1px solid rgba(0, 0, 0, 0.9);
+				transition: all 0.5s;
+			}
 			@media all and (max-width: 1023px) {
-				.scroll-control span {
+				.dot {
 					display: none;
 				}
 			}
@@ -173,11 +193,25 @@
 				z-index: -2;background-size: cover;background: rgba(255, 255, 255, 0.85);
 				position: fixed;top: 0;left: 0;width: 100%;height: 100%;
 			}
+			#myBtn {
+			  display: none;position: fixed;
+			  bottom: 20px;right: 30px;
+			  z-index: 99;font-size: 18px;
+			  border: none;outline: none;
+			  background-color:  #C55A11;color:  white;
+			  cursor: pointer;padding: 15px;
+			  border-radius: 50%;transition: all 0.5s;
+			}
+			#myBtn:hover {
+			  background-color: white;color:  #C55A11;
+				border: 1px solid  #C55A11;
+			}
 		</style>
 	</head>
 	<body>
 		<div class="body"></div>
 		<div class="bodx"></div>
+		<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 		<div class="header" id="navbar">
 			<div><a href="https://www.univ-ouargla.dz/index.php/en/"><img src="ukmo.png" alt="UKMO" height="32"></a></div>
 			<div><input type="button" class="navbtns" onclick="scrooll(2)" value="Abstract"></div>
@@ -191,16 +225,36 @@
 			<div><input type="button" class="navbtns" onclick="scrooll(10)" value="Contact"></div>
 		</div>
 		<div class="scroll-control">
-			<span onclick="scrooll(1)"></span>
-			<span onclick="scrooll(2)"></span>
-			<span onclick="scrooll(3)"></span>
-			<span onclick="scrooll(4)"></span>
-			<span onclick="scrooll(5)"></span>
-			<span onclick="scrooll(6)"></span>
-			<span onclick="scrooll(7)"></span>
-			<span onclick="scrooll(8)"></span>
-			<span onclick="scrooll(9)"></span>
-			<span onclick="scrooll(10)"></span>
+			<div class="dotholder" onclick="scrooll(1)">
+				<div class="dot active" id="dot0"></div>
+			</div>
+			<div class="dotholder" onclick="scrooll(2)">
+				<div class="dot" id="dot1"></div>
+			</div>
+			<div class="dotholder" onclick="scrooll(3)">
+				<div class="dot" id="dot2"></div>
+			</div>
+			<div class="dotholder" onclick="scrooll(4)">
+				<div class="dot" id="dot3"></div>
+			</div>
+			<div class="dotholder" onclick="scrooll(5)">
+				<div class="dot" id="dot4"></div>
+			</div>
+			<div class="dotholder" onclick="scrooll(6)">
+				<div class="dot" id="dot5"></div>
+			</div>
+			<div class="dotholder" onclick="scrooll(7)">
+				<div class="dot" id="dot6"></div>
+			</div>
+			<div class="dotholder" onclick="scrooll(8)">
+				<div class="dot" id="dot7"></div>
+			</div>
+			<div class="dotholder" onclick="scrooll(9)">
+				<div class="dot" id="dot8"></div>
+			</div>
+			<div class="dotholder" onclick="scrooll(10)">
+				<div class="dot" id="dot9"></div>
+			</div>
 		</div>
 		<div class="emailbyd" id="emailbyd">
 			<p>E-mail Coped</p>
@@ -440,6 +494,23 @@
 				else if (sec==10) {
 					$.scrollify.move('#s-ten');
 				}
+				changedot(sec);
+			}
+			function alhnge() {
+				for (var i = 0; i < 9; i++) {
+					if (($.scrollify.current())) {
+						//
+					}
+				}
+			}
+			function changedot(sec) {
+				for (var i = 0; i < 10; i++) {
+					document.getElementById('dot'+i).removeAttribute("class");
+					document.getElementById('dot'+i).setAttribute("class", "dot");
+				}
+				var x = sec-1;
+				document.getElementById('dot'+x).removeAttribute("class");
+				document.getElementById('dot'+x).setAttribute("class", "dot active");
 			}
 			var prevScrollpos = window.pageYOffset;
 					window.onscroll = function() {
@@ -487,6 +558,25 @@
 					$.scrollify.enable();
 				}
 			}
+			// Get the button
+			let mybutton = document.getElementById("myBtn");
+
+			// When the user scrolls down 20px from the top of the document, show the button
+			window.onscroll = function() {scrollFunction()};
+
+			function scrollFunction() {
+			  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			    mybutton.style.display = "block";
+			  } else {
+			    mybutton.style.display = "none";
+			  }
+			}
+
+			// When the user clicks on the button, scroll to the top of the document
+			function topFunction() {
+			  document.body.scrollTop = 0;
+			  document.documentElement.scrollTop = 0;
+			}
 			function clemail() {
 				document.getElementById("divmil").style.display ="block";
 				document.getElementById('emailbyd').style.display ="block";
@@ -500,62 +590,6 @@
 					document.getElementById('emailbyd').style.display ="none";
 				}, 2000)
 			}
-			function imageZoom(imgID, resultID) {
-			  var img, lens, result, cx, cy;
-			  img = document.getElementById(imgID);
-			  result = document.getElementById(resultID);
-			  /*create lens:*/
-			  lens = document.createElement("DIV");
-			  lens.setAttribute("class", "img-zoom-lens");
-			  /*insert lens:*/
-			  img.parentElement.insertBefore(lens, img);
-			  /*calculate the ratio between result DIV and lens:*/
-			  cx = result.offsetWidth / lens.offsetWidth;
-			  cy = result.offsetHeight / lens.offsetHeight;
-			  /*set background properties for the result DIV:*/
-			  result.style.backgroundImage = "url('" + img.src + "')";
-			  result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
-			  /*execute a function when someone moves the cursor over the image, or the lens:*/
-			  lens.addEventListener("mousemove", moveLens);
-			  img.addEventListener("mousemove", moveLens);
-			  /*and also for touch screens:*/
-			  lens.addEventListener("touchmove", moveLens);
-			  img.addEventListener("touchmove", moveLens);
-			  function moveLens(e) {
-			    var pos, x, y;
-			    /*prevent any other actions that may occur when moving over the image:*/
-			    e.preventDefault();
-			    /*get the cursor's x and y positions:*/
-			    pos = getCursorPos(e);
-			    /*calculate the position of the lens:*/
-			    x = pos.x - (lens.offsetWidth / 2);
-			    y = pos.y - (lens.offsetHeight / 2);
-			    /*prevent the lens from being positioned outside the image:*/
-			    if (x > img.width - lens.offsetWidth) {x = img.width - lens.offsetWidth;}
-			    if (x < 0) {x = 0;}
-			    if (y > img.height - lens.offsetHeight) {y = img.height - lens.offsetHeight;}
-			    if (y < 0) {y = 0;}
-			    /*set the position of the lens:*/
-			    lens.style.left = x + "px";
-			    lens.style.top = y + "px";
-			    /*display what the lens "sees":*/
-			    result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
-			  }
-			  function getCursorPos(e) {
-			    var a, x = 0, y = 0;
-			    e = e || window.event;
-			    /*get the x and y positions of the image:*/
-			    a = img.getBoundingClientRect();
-			    /*calculate the cursor's x and y coordinates, relative to the image:*/
-			    x = e.pageX - a.left;
-			    y = e.pageY - a.top;
-			    /*consider any page scrolling:*/
-			    x = x - window.pageXOffset;
-			    y = y - window.pageYOffset;
-			    return {x : x, y : y};
-			  }
-			}
-			imageZoom("myimage", "myresult");
 			function openviwer(ing) {
 				if (ing==0) {
 					document.getElementById('img-viewer').style.display ="none";
@@ -576,6 +610,10 @@
 					document.getElementById('myimage').setAttribute("src", "Picture4.png");
 				}
 			}
+			setTimeout(function() {
+				document.body.scrollTop = 0;
+	  		document.documentElement.scrollTop = 0;
+			},500);
 		</script>
 	</body>
 </html>
