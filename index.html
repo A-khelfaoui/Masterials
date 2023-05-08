@@ -228,7 +228,7 @@
 	<body>
 		<div class="body"></div>
 		<div class="bodx"></div>
-		<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+		<button onclick="scrooll(1)" id="myBtn" title="Go to top">Top</button>
 		<div class="header" id="navbar">
 			<div><a href="https://www.univ-ouargla.dz/index.php/en/"><img src="ukmo.png" alt="UKMO" height="32"></a></div>
 			<div><input type="button" class="navbtns" onclick="scrooll(2)" value="Abstract"></div>
@@ -663,10 +663,6 @@
 					document.getElementById('myimage').setAttribute("src", "Picture4.png");
 				}
 			}
-			setTimeout(function() {
-				document.body.scrollTop = 0;
-	  		document.documentElement.scrollTop = 0;
-			},500);
 		</script>
 	</body>
 </html>
