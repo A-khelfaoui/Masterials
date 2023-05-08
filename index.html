@@ -69,7 +69,7 @@
 			}
 			.header {
 				display: flex;justify-content: space-around;
-				padding: 1.5%;position: fixed;background-color: #333;
+				padding: 1.5%;position: fixed;background-color: rgba(51, 51, 51, 0.3);
 			  top: 0;z-index: 999;
 			  width: 100%;
 			  transition: top 0.3s;
@@ -532,34 +532,8 @@
 				else if (sec==10) {
 					$.scrollify.move('#s-ten');
 				}
-				changedot(sec);
-			}
-			function alhnge() {
-				for (var i = 0; i < 9; i++) {
-					if (($.scrollify.current())) {
-						//
-					}
-				}
-			}
-			function changedot(sec) {
-				for (var i = 0; i < 10; i++) {
-					document.getElementById('dot'+i).removeAttribute("class");
-					document.getElementById('dot'+i).setAttribute("class", "dot");
-				}
-				var x = sec-1;
-				document.getElementById('dot'+x).removeAttribute("class");
-				document.getElementById('dot'+x).setAttribute("class", "dot active");
 			}
 			var prevScrollpos = window.pageYOffset;
-					window.onscroll = function() {
-						var currentScrollPos = window.pageYOffset;
-  				if (prevScrollpos > currentScrollPos) {
-    			document.getElementById("navbar").style.top = "0";
-  			} else {
-    			document.getElementById("navbar").style.top = "-12%";
-  			}
-  			prevScrollpos = currentScrollPos;
-			}
 
 			$(window).on('resize', function () {
 				screenCheck();
@@ -641,6 +615,14 @@
 			  } else {
 			    mybutton.style.display = "none";
 			  }
+				var currentScrollPos = window.pageYOffset;
+				if (prevScrollpos > currentScrollPos) {
+					document.getElementById("navbar").style.top = "0";
+				}
+				else {
+					document.getElementById("navbar").style.top = "-12%";
+				}
+			prevScrollpos = currentScrollPos;
 			}
 
 			// When the user clicks on the button, scroll to the top of the document
